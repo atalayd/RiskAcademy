@@ -1,4 +1,7 @@
-# 📊 README.md - Financial Risk Management Course - Risk Academy
+---
+---
+
+# 📊 Financial Risk Management Course - Risk Academy
 
 ## 📌 About This Project
 
