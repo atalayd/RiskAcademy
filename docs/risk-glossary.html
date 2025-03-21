@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Risk Management Course | Risk Academy</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Risk Academy</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="modules/market-risk/index.html" class="nav-link">Market Risk</a></li>
+                <li class="nav-item"><a href="modules/credit-risk/index.html" class="nav-link">Credit Risk</a></li>
+                <li class="nav-item"><a href="modules/counterparty-risk/index.html" class="nav-link">Counterparty
+                        Risk</a></li>
+                <li class="nav-item"><a href="#" id="dark-mode-toggle" class="nav-link">Toggle Dark Mode</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-section glossary-hero">
+            <div class="container">
+                <h1>Risk Management Glossary</h1>
+                <h1>Risk Management Glossary</h1>
+                <p class="lead">Comprehensive definitions of key financial risk management terms</p>
+            </div>
+        </section>
+
+        <section class="glossary-section">
+            <div class="container">
+                <div class="glossary-controls">
+                </div>
+
+                <div id="glossary-results" class="glossary-results">
+                    <!-- Market Risk Terms -->
+                    <div class="glossary-category" id="market-risk-terms">
+                        <h2>Market Risk Terms</h2>
+                        
+                        <div class="glossary-term" data-category="market-risk" data-letter="b">
+                            <h3>Backtesting</h3>
+                            <div class="term-content">
+                                <p>The process of comparing actual returns with expected returns to validate the accuracy of risk models, particularly VaR models. Regulators typically require banks to backtest their VaR models using at least one year of historical data.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Market Risk</span>
+                                    <a href="modules/market-risk/index.html#backtesting" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glossary-term" data-category="market-risk" data-letter="d">
+                            <h3>Delta</h3>
+                            <div class="term-content">
+                                <p>A risk measure that estimates the change in the price of a derivative, such as an option, relative to the change in the price of the underlying asset. Delta is the first derivative of the option's value with respect to the underlying asset's price.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Market Risk</span>
+                                    <a href="modules/market-risk/index.html#greeks" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glossary-term" data-category="market-risk" data-letter="h">
+                            <h3>Historical Simulation</h3>
+                            <div class="term-content">
+                                <p>A method for calculating Value at Risk (VaR) that uses historical data to create a distribution of potential portfolio returns. It applies historical changes in market variables to the current portfolio to simulate potential future returns.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Market Risk</span>
+                                    <a href="modules/market-risk/index.html#var-methods" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glossary-term" data-category="market-risk" data-letter="m">
+                            <h3>Monte Carlo Simulation</h3>
+                            <div class="term-content">
+                                <p>A computational technique that uses repeated random sampling to obtain numerical results for risk assessment. In market risk, it's used to simulate various market scenarios and their impact on portfolio value.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Market Risk</span>
+                                    <a href="modules/market-risk/index.html#monte-carlo" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glossary-term" data-category="market-risk" data-letter="s">
+                            <h3>Stress Testing</h3>
+                            <div class="term-content">
+                                <p>A simulation technique used to determine the ability of a financial institution to deal with an economic crisis. It involves testing the resilience of institutions to various scenarios, including extreme market movements.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Market Risk</span>
+                                    <a href="modules/market-risk/index.html#stress-testing" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glossary-term" data-category="market-risk" data-letter="v">
+                            <h3>Value at Risk (VaR)</h3>
+                            <div class="term-content">
+                                <p>A statistical technique used to measure and quantify the level of financial risk within a firm or investment portfolio over a specific time frame. VaR is defined as the maximum potential loss in value of a portfolio due to adverse market movements, for a given confidence level, over a defined period.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Market Risk</span>
+                                    <a href="modules/market-risk/index.html#var" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Credit Risk Terms -->
+                    <div class="glossary-category" id="credit-risk-terms">
+                        <h2>Credit Risk Terms</h2>
+                        
+                        <div class="glossary-term" data-category="credit-risk" data-letter="c">
+                            <h3>Credit Default Swap (CDS)</h3>
+                            <div class="term-content">
+                                <p>A financial derivative that allows an investor to swap or offset their credit risk with that of another investor. It's essentially an insurance against default, where the buyer makes payments to the seller until the contract matures, and in return, receives a payoff if the underlying financial instrument defaults.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Credit Risk</span>
+                                    <a href="modules/credit-risk/index.html#cds" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glossary-term" data-category="credit-risk" data-letter="e">
+                            <h3>Expected Loss (EL)</h3>
+                            <div class="term-content">
+                                <p>The average credit loss that a lender expects to incur in a given time period. It's calculated as the product of Probability of Default (PD), Loss Given Default (LGD), and Exposure at Default (EAD): EL = PD × LGD × EAD.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Credit Risk</span>
+                                    <a href="modules/credit-risk/index.html#expected-loss" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glossary-term" data-category="credit-risk" data-letter="l">
+                            <h3>Loss Given Default (LGD)</h3>
+                            <div class="term-content">
+                                <p>The amount of money a bank or other financial institution loses when a borrower defaults on a loan, expressed as a percentage of total exposure at the time of default. LGD = 1 - Recovery Rate.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Credit Risk</span>
+                                    <a href="modules/credit-risk/index.html#lgd" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glossary-term" data-category="credit-risk" data-letter="p">
+                            <h3>Probability of Default (PD)</h3>
+                            <div class="term-content">
+                                <p>The likelihood that a borrower will default on their debt obligations over a given time horizon, typically one year. PD is a key component in calculating expected loss and regulatory capital requirements.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Credit Risk</span>
+                                    <a href="modules/credit-risk/index.html#pd" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Counterparty Risk Terms -->
+                    <div class="glossary-category" id="counterparty-risk-terms">
+                        <h2>Counterparty Risk Terms</h2>
+                        
+                        <div class="glossary-term" data-category="counterparty-risk" data-letter="c">
+                            <h3>Credit Valuation Adjustment (CVA)</h3>
+                            <div class="term-content">
+                                <p>An adjustment to the valuation of a derivative transaction to account for the credit risk of the counterparty. CVA represents the market value of counterparty credit risk and is calculated as the difference between the risk-free portfolio value and the true portfolio value that takes into account the possibility of a counterparty's default.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Counterparty Risk</span>
+                                    <a href="modules/counterparty-risk/index.html#cva" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glossary-term" data-category="counterparty-risk" data-letter="d">
+                            <h3>Debt Valuation Adjustment (DVA)</h3>
+                            <div class="term-content">
+                                <p>The counterparty risk adjustment from the perspective of the institution itself. DVA represents the market value of the institution's own credit risk to its counterparties, and is essentially the CVA from the counterparty's perspective.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Counterparty Risk</span>
+                                    <a href="modules/counterparty-risk/index.html#dva" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glossary-term" data-category="counterparty-risk" data-letter="p">
+                            <h3>Potential Future Exposure (PFE)</h3>
+                            <div class="term-content">
+                                <p>A measure of counterparty risk that estimates the maximum expected credit exposure over a specified period of time at a specified confidence level. PFE is calculated using simulation techniques to model potential future market scenarios.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Counterparty Risk</span>
+                                    <a href="modules/counterparty-risk/index.html#pfe" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glossary-term" data-category="counterparty-risk" data-letter="w">
+                            <h3>Wrong-Way Risk</h3>
+                            <div class="term-content">
+                                <p>The risk that occurs when exposure to a counterparty is adversely correlated with the credit quality of that counterparty. In other words, as the creditworthiness of the counterparty deteriorates, the exposure to that counterparty increases.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Counterparty Risk</span>
+                                    <a href="modules/counterparty-risk/index.html#wrong-way-risk" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Regulatory Terms -->
+                    <div class="glossary-category" id="regulatory-terms">
+                        <h2>Regulatory Terms</h2>
+                        
+                        <div class="glossary-term" data-category="regulatory" data-letter="b">
+                            <h3>Basel III</h3>
+                            <div class="term-content">
+                                <p>A global regulatory framework for more resilient banks and banking systems, developed by the Basel Committee on Banking Supervision. It builds on Basel II and introduces new capital and liquidity requirements to strengthen the regulation, supervision, and risk management of the banking sector.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Regulatory</span>
+                                    <a href="modules/credit-risk/index.html#basel" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glossary-term" data-category="regulatory" data-letter="f">
+                            <h3>FRTB (Fundamental Review of the Trading Book)</h3>
+                            <div class="term-content">
+                                <p>A set of rules developed by the Basel Committee on Banking Supervision that aims to overhaul how banks calculate market risk capital requirements. FRTB introduces a revised standardized approach and internal models approach for market risk.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Regulatory</span>
+                                    <a href="modules/market-risk/index.html#frtb" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glossary-term" data-category="regulatory" data-letter="i">
+                            <h3>Internal Ratings-Based (IRB) Approach</h3>
+                            <div class="term-content">
+                                <p>A method allowed under Basel II and III that enables banks to use their internal models to estimate credit risk parameters (PD, LGD, EAD) for regulatory capital calculations. The IRB approach can be either Foundation IRB (F-IRB) or Advanced IRB (A-IRB).</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">Regulatory</span>
+                                    <a href="modules/credit-risk/index.html#irb" class="learn-more">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- General Terms -->
+                    <div class="glossary-category" id="general-terms">
+                        <h2>General Risk Management Terms</h2>
+                        
+                        <div class="glossary-term" data-category="general" data-letter="d">
+                            <h3>Diversification</h3>
+                            <div class="term-content">
+                                <p>A risk management technique that mixes a wide variety of investments within a portfolio to minimize the impact of any single investment's performance on the overall portfolio performance. The rationale is that a portfolio constructed of different kinds of assets will, on average, yield higher long-term returns and lower the risk of any individual holding or security.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">General</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glossary-term" data-category="general" data-letter="h">
+                            <h3>Hedging</h3>
+                            <div class="term-content">
+                                <p>A risk management strategy used to offset potential losses in investments by taking an opposite position in a related asset. The goal of hedging is not to make money but to protect from losses.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">General</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glossary-term" data-category="general" data-letter="r">
+                            <h3>Risk Appetite</h3>
+                            <div class="term-content">
+                                <p>The level of risk that an organization is willing to accept in pursuit of its objectives. Risk appetite is a key component of an organization's risk management framework and helps guide decision-making processes.</p>
+                                <div class="term-meta">
+                                    <span class="category-tag">General</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="no-results" class="no-results" style="display: none;">
+                    <p>No terms found matching your search criteria. Please try different keywords or filters.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Risk Academy</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="index.html">Home</a></li>
+                    <li class="footer-link"><a href="about.html">About</a></li>
+                    <li class="footer-link"><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Course Modules</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="modules/market-risk/index.html">Market Risk</a></li>
+                    <li class="footer-link"><a href="modules/credit-risk/index.html">Credit Risk</a></li>
+                    <li class="footer-link"><a href="modules/counterparty-risk/index.html">Counterparty Risk</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="resources/glossary.html">Risk Glossary</a></li>
+                    <li class="footer-link"><a href="resources/calculators.html">Risk Calculators</a></li>
+                    <li class="footer-link"><a href="resources/references.html">References</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="legal/terms.html">Terms of Use</a></li>
+                    <li class="footer-link"><a href="legal/privacy.html">Privacy Policy</a></li>
+                    <li class="footer-link"><a href="legal/cookies.html">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2025 Risk Academy. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="assets/js/main.js"></script>
+</body>
+
+</html>
