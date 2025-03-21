@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counterparty Credit Risk Module | Financial Risk Management Course</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="../../index.html" class="logo">Risk Academy</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../market-risk/index.html" class="nav-link">Market Risk</a></li>
+                <li class="nav-item"><a href="../credit-risk/index.html" class="nav-link">Credit Risk</a></li>
+                <li class="nav-item"><a href="../counterparty-risk/index.html" class="nav-link active">Counterparty Risk</a></li>
+                <li class="nav-item"><a href="#" id="dark-mode-toggle" class="nav-link">Toggle Dark Mode</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Module Header -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="animate-on-scroll">Counterparty Credit Risk Module</h1>
+            <p class="animate-on-scroll">Understand exposure modeling, CVA/DVA, wrong-way risk, and regulatory frameworks.</p>
+            
+            <!-- Skill Level Selector -->
+            <div class="skill-selector animate-on-scroll">
+                <div class="skill-option beginner active" data-skill="beginner">Beginner</div>
+                <div class="skill-option intermediate" data-skill="intermediate">Intermediate</div>
+                <div class="skill-option advanced" data-skill="advanced">Advanced</div>
+            </div>
+            
+            <!-- Breadcrumb Navigation -->
+            <div class="breadcrumb animate-on-scroll">
+                <a href="../../index.html">Home</a> &gt; Counterparty Credit Risk
+            </div>
+        </div>
+    </section>
+
+    <!-- Module Content -->
+    <section class="course-content">
+        <div class="container">
+            <h2 class="content-title animate-on-scroll">Introduction to Counterparty Credit Risk</h2>
+            
+            <!-- Beginner Content -->
+            <div class="content-beginner">
+                <div class="content-section animate-on-scroll">
+                    <h3>What is Counterparty Credit Risk?</h3>
+                    <p class="content-text">
+                        Counterparty credit risk (CCR) is the risk that a counterparty to a financial contract will default before the final settlement of the transaction's cash flows. Unlike traditional credit risk, CCR creates a bilateral risk profile because the market value of the transaction can be positive or negative for either counterparty at different points in time.
+                    </p>
+                    
+                    <p class="content-text">
+                        Counterparty credit risk is particularly relevant for:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li><strong>Over-the-Counter (OTC) Derivatives</strong>: Such as swaps, options, and forwards</li>
+                        <li><strong>Securities Financing Transactions</strong>: Including repos and securities lending</li>
+                        <li><strong>Long Settlement Transactions</strong>: Where settlement occurs after the standard settlement period</li>
+                        <li><strong>Margin Lending</strong>: Where loans are secured by financial securities</li>
+                    </ul>
+                    
+                    <div class="interactive-element">
+                        <h4>Counterparty Risk vs. Traditional Credit Risk</h4>
+                        <div class="chart-container">
+                            <canvas id="ccr-vs-credit-risk-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section animate-on-scroll">
+                    <h3>Key Counterparty Risk Concepts</h3>
+                    <p class="content-text">
+                        Understanding counterparty credit risk requires familiarity with several key concepts:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>
+                            <strong>Current Exposure</strong>: The current market value of a transaction if it were to be closed out immediately (also known as Mark-to-Market value).
+                        </li>
+                        <li>
+                            <strong>Potential Future Exposure (PFE)</strong>: The maximum expected exposure over a specified time horizon at a given confidence level.
+                        </li>
+                        <li>
+                            <strong>Expected Exposure (EE)</strong>: The average exposure at a future date, taking into account possible changes in market factors.
+                        </li>
+                        <li>
+                            <strong>Credit Valuation Adjustment (CVA)</strong>: The adjustment to the value of a derivative to account for the possibility of a counterparty's default.
+                        </li>
+                        <li>
+                            <strong>Netting</strong>: The process of offsetting positive and negative exposures with the same counterparty to reduce overall exposure.
+                        </li>
+                        <li>
+                            <strong>Collateral</strong>: Assets pledged to secure exposure, reducing the loss in case of default.
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="content-section animate-on-scroll">
+                    <h3>Counterparty Risk Regulatory Framework</h3>
+                    <p class="content-text">
+                        Counterparty credit risk is regulated under various frameworks, including:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>
+                            <strong>Basel III</strong>: Introduced the Standardized Approach for Counterparty Credit Risk (SA-CCR) and CVA capital charge.
+                        </li>
+                        <li>
+                            <strong>Dodd-Frank Act</strong>: Requires central clearing for standardized OTC derivatives and margin requirements for non-cleared derivatives.
+                        </li>
+                        <li>
+                            <strong>EMIR (European Market Infrastructure Regulation)</strong>: Similar to Dodd-Frank, focuses on reducing systemic risk in OTC derivatives markets.
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Knowledge Check -->
+                <div class="knowledge-test animate-on-scroll">
+                    <h3>Knowledge Check</h3>
+                    <div class="question">
+                        <div class="question-text">Which of the following best describes Potential Future Exposure (PFE)?</div>
+                        <div class="options">
+                            <div class="option" data-correct="false">The current market value of a transaction</div>
+                            <div class="option" data-correct="true">The maximum expected exposure over a specified time horizon at a given confidence level</div>
+                            <div class="option" data-correct="false">The adjustment to the value of a derivative to account for counterparty default risk</div>
+                            <div class="option" data-correct="false">The process of offsetting positive and negative exposures with the same counterparty</div>
+                        </div>
+                        <div class="feedback"></div>
+                    </div>
+                    
+                    <button id="check-answer-beginner" class="cta-button">Check Answer</button>
+                </div>
+            </div>
+            
+            <!-- Intermediate Content -->
+            <div class="content-intermediate">
+                <div class="content-section animate-on-scroll">
+                    <h3>Exposure Modeling</h3>
+                    <p class="content-text">
+                        Exposure modeling is the process of estimating the potential exposure to a counterparty over the life of a transaction or portfolio. This involves simulating future market scenarios to determine how the value of the transaction might evolve over time.
+                    </p>
+                    
+                    <h4>Key Exposure Metrics</h4>
+                    <ul class="content-list">
+                        <li>
+                            <strong>Expected Exposure (EE)</strong>: The average exposure at a future date, calculated as the probability-weighted average of positive exposures.
+                        </li>
+                        <li>
+                            <strong>Potential Future Exposure (PFE)</strong>: The maximum exposure at a future date with a high confidence level (typically 95% or 99%).
+                        </li>
+                        <li>
+                            <strong>Expected Positive Exposure (EPE)</strong>: The time-weighted average of expected exposures over a specified time horizon.
+                        </li>
+                        <li>
+                            <strong>Effective Expected Positive Exposure (EEPE)</strong>: A weighted average of effective EE, used in regulatory capital calculations.
+                        </li>
+                    </ul>
+                    
+                    <h4>Exposure Modeling Approaches</h4>
+                    <ul class="content-list">
+                        <li>
+                            <strong>Monte Carlo Simulation</strong>: Generates thousands of possible future market scenarios to estimate exposure distribution.
+                        </li>
+                        <li>
+                            <strong>Historical Simulation</strong>: Uses historical market data to project future exposures.
+                        </li>
+                        <li>
+                            <strong>Parametric Methods</strong>: Uses statistical parameters and analytical formulas to estimate exposure.
+                        </li>
+                    </ul>
+                    
+                    <div class="interactive-element">
+                        <h4>Exposure Profile Simulator</h4>
+                        <form id="exposure-simulator-form">
+                            <div class="form-group">
+                                <label for="transaction-type" class="form-label">Transaction Type</label>
+                                <select id="transaction-type" class="form-control form-select">
+                                    <option value="interest-rate-swap">Interest Rate Swap</option>
+                                    <option value="fx-forward">FX Forward</option>
+                                    <option value="credit-default-swap">Credit Default Swap</option>
+                                    <option value="equity-option">Equity Option</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="notional-amount" class="form-label">Notional Amount ($)</label>
+                                <input type="number" id="notional-amount" class="form-control" value="10000000" min="1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="maturity" class="form-label">Maturity (Years)</label>
+                                <input type="number" id="maturity" class="form-control" value="5" min="0.1" max="30" step="0.1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="volatility" class="form-label">Volatility (%)</label>
+                                <input type="number" id="volatility" class="form-control" value="15" min="1" max="100" required>
+                            </div>
+                            
+                            <button type="submit" class="cta-button">Generate Exposure Profile</button>
+                        </form>
+                        
+                        <div id="exposure-profile-container" style="display: none;">
+                            <h4>Exposure Profile</h4>
+                            <div class="chart-container">
+                                <canvas id="exposure-profile-chart"></canvas>
+                            </div>
+                            
+                            <table class="content-table">
+                                <thead>
+                                    <tr>
+                                        <th>Metric</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Peak Potential Future Exposure (PFE)</td>
+                                        <td id="peak-pfe">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Expected Positive Exposure (EPE)</td>
+                                        <td id="epe">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Effective EPE</td>
+                                        <td id="effective-epe">$0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section animate-on-scroll">
+                    <h3>Credit Valuation Adjustment (CVA) and Debt Valuation Adjustment (DVA)</h3>
+                    <p class="content-text">
+                        Credit Valuation Adjustment (CVA) and Debt Valuation Adjustment (DVA) are accounting adjustments that reflect the fair value of counterparty credit risk in derivative transactions.
+                    </p>
+                    
+                    <h4>Credit Valuation Adjustment (CVA)</h4>
+                    <p class="content-text">
+                        CVA is the adjustment to the value of a derivative to account for the possibility of a counterparty's default. It represents the market value of counterparty credit risk and is calculated as:
+                    </p>
+                    
+                    <p class="content-text">
+                        <strong>CVA = (1 - Recovery Rate) × ∑ Discount Factor × Expected Exposure × Probability of Default</strong>
+                    </p>
+                    
+                    <h4>Debt Valuation Adjustment (DVA)</h4>
+                    <p class="content-text">
+                        DVA is the adjustment to the value of a derivative to account for the possibility of an institution's own default. It is essentially the CVA from the counterparty's perspective and represents a gain to the institution.
+                    </p>
+                    
+                    <h4>Funding Valuation Adjustment (FVA)</h4>
+                    <p class="content-text">
+                        FVA accounts for the funding costs associated with uncollateralized derivatives. It reflects the cost of funding the uncollateralized portion of the derivative exposure.
+                    </p>
+                    
+                    <div class="interactive-element">
+                        <h4>CVA Calculator</h4>
+                        <form id="cva-calculator-form">
+                            <div class="form-group">
+                                <label for="expected-exposure" class="form-label">Expected Exposure ($)</label>
+                                <input type="number" id="expected-exposure" class="form-control" value="1000000" min="1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="counterparty-pd" class="form-label">Counterparty Probability of Default (%)</label>
+                                <input type="number" id="counterparty-pd" class="form-control" value="2" min="0" max="100" step="0.1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="recovery-rate" class="form-label">Recovery Rate (%)</label>
+                                <input type="number" id="recovery-rate" class="form-control" value="40" min="0" max="100" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="discount-rate" class="form-label">Discount Rate (%)</label>
+                                <input type="number" id="discount-rate" class="form-control" value="3" min="0" max="20" step="0.1" required>
+                            </div>
+                            
+                            <button type="submit" class="cta-button">Calculate CVA</button>
+                        </form>
+                        
+                        <div id="cva-result-container" style="display: none;">
+                            <h4>CVA Calculation Results</h4>
+                            <div id="cva-result" class="dashboard-value">$0.00</div>
+                            
+                            <p>As a percentage of exposure:</p>
+                            <div id="cva-percentage" class="dashboard-value">0.00%</div>
+                            
+                            <div class="chart-container">
+                                <canvas id="cva-components-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Knowledge Check -->
+                <div class="knowledge-test animate-on-scroll">
+                    <h3>Knowledge Check</h3>
+                    <div class="question">
+                        <div class="question-text">Which of the following is NOT a component in the calculation of Credit Valuation Adjustment (CVA)?</div>
+                        <div class="options">
+                            <div class="option" data-correct="false">Expected Exposure</div>
+                            <div class="option" data-correct="false">Probability of Default</div>
+                            <div class="option" data-correct="false">Recovery Rate</div>
+                            <div class="option" data-correct="true">Value at Risk (VaR)</div>
+                        </div>
+                        <div class="feedback"></div>
+                    </div>
+                    
+                    <button id="check-answer-intermediate" class="cta-button">Check Answer</button>
+                </div>
+            </div>
+            
+            <!-- Advanced Content -->
+            <div class="content-advanced">
+                <div class="content-section animate-on-scroll">
+                    <h3>Wrong-Way Risk</h3>
+                    <p class="content-text">
+                        Wrong-way risk occurs when exposure to a counterparty is adversely correlated with the credit quality of that counterparty. In other words, the exposure increases as the counterparty's creditworthiness deteriorates.
+                    </p>
+                    
+                    <h4>Types of Wrong-Way Risk</h4>
+                    <ul class="content-list">
+                        <li>
+                            <strong>Specific Wrong-Way Risk</strong>: Arises from a specific relationship between the counterparty and the underlying exposure (e.g., a bank having exposure to a company through a put option on the company's own stock).
+                        </li>
+                        <li>
+                            <strong>General Wrong-Way Risk</strong>: Arises from a correlation between the counterparty's creditworthiness and general market risk factors (e.g., a bank in an emerging market with FX derivatives that would increase in value if the local currency depreciates).
+                        </li>
+                    </ul>
+                    
+                    <h4>Managing Wrong-Way Risk</h4>
+                    <ul class="content-list">
+                        <li>
+                            <strong>Identification</strong>: Regular review of portfolios to identify potential wrong-way risk.
+                        </li>
+                        <li>
+                            <strong>Measurement</strong>: Stress testing and scenario analysis to quantify the impact.
+                        </li>
+                        <li>
+                            <strong>Mitigation</strong>: Setting exposure limits, requiring additional collateral, or restructuring transactions.
+                        </li>
+                        <li>
+                            <strong>Monitoring</strong>: Ongoing surveillance of exposures and counterparty creditworthiness.
+                        </li>
+                    </ul>
+                    
+                    <div class="interactive-element">
+                        <h4>Wrong-Way Risk Analyzer</h4>
+                        <form id="wrong-way-risk-form">
+                            <div class="form-group">
+                                <label for="transaction-description" class="form-label">Transaction Description</label>
+                                <select id="transaction-description" class="form-control form-select">
+                                    <option value="fx-emerging">FX derivative with emerging market counterparty</option>
+                                    <option value="commodity-producer">Commodity derivative with commodity producer</option>
+                                    <option value="equity-put">Put option on counterparty's own stock</option>
+                                    <option value="sovereign-cds">CDS on sovereign with domestic bank counterparty</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="correlation-level" class="form-label">Correlation Level</label>
+                                <input type="range" id="correlation-level" class="form-control" min="-100" max="100" value="50">
+                                <span id="correlation-level-value">50%</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="exposure-amount" class="form-label">Exposure Amount ($)</label>
+                                <input type="number" id="exposure-amount" class="form-control" value="5000000" min="1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="stress-scenario" class="form-label">Stress Scenario</label>
+                                <select id="stress-scenario" class="form-control form-select">
+                                    <option value="mild">Mild Market Stress</option>
+                                    <option value="moderate">Moderate Market Stress</option>
+                                    <option value="severe">Severe Market Stress</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="cta-button">Analyze Wrong-Way Risk</button>
+                        </form>
+                        
+                        <div id="wrong-way-risk-result-container" style="display: none;">
+                            <h4>Wrong-Way Risk Analysis</h4>
+                            <div class="chart-container">
+                                <canvas id="wrong-way-risk-chart"></canvas>
+                            </div>
+                            
+                            <table class="content-table">
+                                <thead>
+                                    <tr>
+                                        <th>Scenario</th>
+                                        <th>Exposure</th>
+                                        <th>PD Increase</th>
+                                        <th>Expected Loss</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Base Case</td>
+                                        <td id="base-exposure">$0</td>
+                                        <td>-</td>
+                                        <td id="base-loss">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>With Wrong-Way Risk</td>
+                                        <td id="wwr-exposure">$0</td>
+                                        <td id="pd-increase">0%</td>
+                                        <td id="wwr-loss">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Impact</td>
+                                        <td id="exposure-impact">$0</td>
+                                        <td>-</td>
+                                        <td id="loss-impact">$0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h4>Risk Assessment</h4>
+                            <p id="risk-assessment"></p>
+                            
+                            <h4>Mitigation Recommendations</h4>
+                            <ul id="mitigation-recommendations" class="content-list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section animate-on-scroll">
+                    <h3>Regulatory Frameworks and Capital Requirements</h3>
+                    <p class="content-text">
+                        Counterparty credit risk is subject to specific regulatory requirements for capital adequacy and risk management.
+                    </p>
+                    
+                    <h4>Standardized Approach for Counterparty Credit Risk (SA-CCR)</h4>
+                    <p class="content-text">
+                        SA-CCR is the Basel Committee's standardized approach for measuring counterparty credit risk exposure. It replaced the Current Exposure Method (CEM) and Standardized Method (SM) with a more risk-sensitive approach that:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>Differentiates between margined and non-margined transactions</li>
+                        <li>Provides more meaningful recognition of netting benefits</li>
+                        <li>Captures the risk of volatility in exposures through a risk factor-based approach</li>
+                        <li>Includes a more detailed recognition of collateral</li>
+                    </ul>
+                    
+                    <h4>CVA Capital Charge</h4>
+                    <p class="content-text">
+                        The CVA capital charge is a regulatory capital requirement for potential mark-to-market losses associated with a deterioration in counterparty creditworthiness. Banks can use either:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>
+                            <strong>Standardized Approach</strong>: A formula-based approach that uses supervisory parameters.
+                        </li>
+                        <li>
+                            <strong>Advanced Approach</strong>: Based on the bank's internal models for VaR calculation.
+                        </li>
+                    </ul>
+                    
+                    <h4>Central Clearing and Margin Requirements</h4>
+                    <p class="content-text">
+                        Post-financial crisis regulations have focused on reducing systemic risk through:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>
+                            <strong>Mandatory Central Clearing</strong>: Requiring standardized OTC derivatives to be cleared through central counterparties (CCPs).
+                        </li>
+                        <li>
+                            <strong>Margin Requirements for Non-Cleared Derivatives</strong>: Requiring the exchange of initial and variation margin for non-cleared derivatives.
+                        </li>
+                    </ul>
+                    
+                    <div class="interactive-element">
+                        <h4>SA-CCR Calculator</h4>
+                        <form id="sa-ccr-calculator-form">
+                            <div class="form-group">
+                                <label for="transaction-category" class="form-label">Transaction Category</label>
+                                <select id="transaction-category" class="form-control form-select">
+                                    <option value="interest-rate">Interest Rate</option>
+                                    <option value="fx">Foreign Exchange</option>
+                                    <option value="credit">Credit</option>
+                                    <option value="equity">Equity</option>
+                                    <option value="commodity">Commodity</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="adjusted-notional" class="form-label">Adjusted Notional ($)</label>
+                                <input type="number" id="adjusted-notional" class="form-control" value="10000000" min="1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="maturity-factor" class="form-label">Maturity Factor</label>
+                                <input type="number" id="maturity-factor" class="form-control" value="0.5" min="0.1" max="1" step="0.1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="is-margined" class="form-label">Margined Transaction?</label>
+                                <select id="is-margined" class="form-control form-select">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="cta-button">Calculate SA-CCR Exposure</button>
+                        </form>
+                        
+                        <div id="sa-ccr-result-container" style="display: none;">
+                            <h4>SA-CCR Calculation Results</h4>
+                            <table class="content-table">
+                                <thead>
+                                    <tr>
+                                        <th>Component</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Replacement Cost (RC)</td>
+                                        <td id="replacement-cost">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Potential Future Exposure (PFE)</td>
+                                        <td id="potential-future-exposure">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Exposure at Default (EAD)</td>
+                                        <td id="exposure-at-default">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Risk-Weighted Assets (RWA)</td>
+                                        <td id="risk-weighted-assets">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Capital Requirement (8%)</td>
+                                        <td id="capital-requirement">$0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="chart-container">
+                                <canvas id="sa-ccr-components-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Knowledge Check -->
+                <div class="knowledge-test animate-on-scroll">
+                    <h3>Knowledge Check</h3>
+                    <div class="question">
+                        <div class="question-text">Which of the following best describes "wrong-way risk"?</div>
+                        <div class="options">
+                            <div class="option" data-correct="true">When exposure to a counterparty increases as the counterparty's creditworthiness deteriorates</div>
+                            <div class="option" data-correct="false">When a bank's internal models underestimate counterparty exposure</div>
+                            <div class="option" data-correct="false">When a counterparty defaults during a market downturn</div>
+                            <div class="option" data-correct="false">When collateral value decreases as market volatility increases</div>
+                        </div>
+                        <div class="feedback"></div>
+                    </div>
+                    
+                    <button id="check-answer-advanced" class="cta-button">Check Answer</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module Navigation -->
+    <section class="course-content">
+        <div class="container">
+            <div class="course-navigation">
+                <a href="../credit-risk/index.html" class="nav-button prev">Previous: Credit Risk</a>
+                <a href="../../index.html" class="nav-button next">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Risk Academy</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../../index.html">Home</a></li>
+                        <li class="footer-link"><a href="../../about.html">About</a></li>
+                        <li class="footer-link"><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Course Modules</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../market-risk/index.html">Market Risk</a></li>
+                        <li class="footer-link"><a href="../credit-risk/index.html">Credit Risk</a></li>
+                        <li class="footer-link"><a href="../counterparty-risk/index.html">Counterparty Risk</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../../resources/glossary.html">Risk Glossary</a></li>
+                        <li class="footer-link"><a href="../../resources/calculators.html">Risk Calculators</a></li>
+                        <li class="footer-link"><a href="../../resources/references.html">References</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../../legal/terms.html">Terms of Use</a></li>
+                        <li class="footer-link"><a href="../../legal/privacy.html">Privacy Policy</a></li>
+                        <li class="footer-link"><a href="../../legal/cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 Risk Academy. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/counterparty-risk.js"></script>
+</body>
+</html>

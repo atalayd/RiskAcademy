@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Risk Module | Financial Risk Management Course</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="../../index.html" class="logo">Risk Academy</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../market-risk/index.html" class="nav-link active">Market Risk</a></li>
+                <li class="nav-item"><a href="../credit-risk/index.html" class="nav-link">Credit Risk</a></li>
+                <li class="nav-item"><a href="../counterparty-risk/index.html" class="nav-link">Counterparty Risk</a></li>
+                <li class="nav-item"><a href="#" id="dark-mode-toggle" class="nav-link">Toggle Dark Mode</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Module Header -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="animate-on-scroll">Market Risk Module</h1>
+            <p class="animate-on-scroll">Learn about Value at Risk (VaR), stress testing, and regulatory requirements for market risk management.</p>
+            
+            <!-- Skill Level Selector -->
+            <div class="skill-selector animate-on-scroll">
+                <div class="skill-option beginner active" data-skill="beginner">Beginner</div>
+                <div class="skill-option intermediate" data-skill="intermediate">Intermediate</div>
+                <div class="skill-option advanced" data-skill="advanced">Advanced</div>
+            </div>
+            
+            <!-- Breadcrumb Navigation -->
+            <div class="breadcrumb animate-on-scroll">
+                <a href="../../index.html">Home</a> &gt; Market Risk
+            </div>
+        </div>
+    </section>
+
+    <!-- Module Content -->
+    <section class="course-content">
+        <div class="container">
+            <h2 class="content-title animate-on-scroll">Introduction to Market Risk</h2>
+            
+            <!-- Beginner Content -->
+            <div class="content-beginner">
+                <div class="content-section animate-on-scroll">
+                    <h3>What is Market Risk?</h3>
+                    <p class="content-text">
+                        Market risk is the risk of losses in positions arising from movements in market prices. It encompasses the risk of loss due to the factors that affect an entire market or asset class. Market risk is sometimes called "systematic risk" because it affects the entire market and can't be eliminated through diversification.
+                    </p>
+                    
+                    <p class="content-text">
+                        The main types of market risk include:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li><strong>Equity Risk</strong>: The risk of loss due to changes in stock prices</li>
+                        <li><strong>Interest Rate Risk</strong>: The risk of loss due to changes in interest rates</li>
+                        <li><strong>Currency Risk</strong>: The risk of loss due to changes in foreign exchange rates</li>
+                        <li><strong>Commodity Risk</strong>: The risk of loss due to changes in commodity prices</li>
+                    </ul>
+                    
+                    <div class="interactive-element">
+                        <h4>Market Risk Factors Visualization</h4>
+                        <div class="chart-container">
+                            <canvas id="market-risk-factors-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section animate-on-scroll">
+                    <h3>Basic Market Risk Metrics</h3>
+                    <p class="content-text">
+                        Several metrics are used to measure and manage market risk. The most common ones include:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>
+                            <strong>Value at Risk (VaR)</strong>: A statistical technique used to measure the potential loss in value of a risky asset or portfolio over a defined period for a given confidence interval.
+                        </li>
+                        <li>
+                            <strong>Expected Shortfall (ES)</strong>: Also known as Conditional VaR (CVaR), it measures the expected loss given that the loss exceeds the VaR threshold.
+                        </li>
+                        <li>
+                            <strong>Sensitivity Measures</strong>: These include delta, gamma, vega, theta, and rho for options, and duration and convexity for fixed income securities.
+                        </li>
+                        <li>
+                            <strong>Stress Testing</strong>: The process of determining the impact of extreme market movements on a portfolio.
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="content-section animate-on-scroll">
+                    <h3>Regulatory Framework</h3>
+                    <p class="content-text">
+                        Market risk is regulated under various frameworks, including:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>
+                            <strong>Basel Framework</strong>: The Basel Committee on Banking Supervision has established standards for market risk capital requirements.
+                        </li>
+                        <li>
+                            <strong>Fundamental Review of the Trading Book (FRTB)</strong>: A set of rules that aims to improve how banks calculate market risk capital requirements.
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Knowledge Check -->
+                <div class="knowledge-test animate-on-scroll">
+                    <h3>Knowledge Check</h3>
+                    <div class="question">
+                        <div class="question-text">Which of the following is NOT a type of market risk?</div>
+                        <div class="options">
+                            <div class="option" data-correct="false">Equity Risk</div>
+                            <div class="option" data-correct="false">Interest Rate Risk</div>
+                            <div class="option" data-correct="true">Credit Default Risk</div>
+                            <div class="option" data-correct="false">Currency Risk</div>
+                        </div>
+                        <div class="feedback"></div>
+                    </div>
+                    
+                    <button id="check-answer-beginner" class="cta-button">Check Answer</button>
+                </div>
+            </div>
+            
+            <!-- Intermediate Content -->
+            <div class="content-intermediate">
+                <div class="content-section animate-on-scroll">
+                    <h3>Value at Risk (VaR) Methodologies</h3>
+                    <p class="content-text">
+                        Value at Risk (VaR) is a statistical measure that quantifies the level of financial risk within a firm, portfolio, or position over a specific time frame. There are three main approaches to calculating VaR:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>
+                            <strong>Parametric (Variance-Covariance) Method</strong>: Assumes that returns follow a normal distribution and uses the portfolio's standard deviation to calculate VaR.
+                        </li>
+                        <li>
+                            <strong>Historical Simulation Method</strong>: Uses historical data to create a distribution of potential returns and determines VaR based on the actual historical returns.
+                        </li>
+                        <li>
+                            <strong>Monte Carlo Simulation Method</strong>: Generates thousands of random market scenarios based on specified parameters and calculates the portfolio value for each scenario.
+                        </li>
+                    </ul>
+                    
+                    <div class="interactive-element">
+                        <h4>Value at Risk (VaR) Calculator</h4>
+                        <form id="var-calculator-form">
+                            <div class="form-group">
+                                <label for="portfolio-value" class="form-label">Portfolio Value ($)</label>
+                                <input type="number" id="portfolio-value" class="form-control" value="1000000" min="1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confidence-level" class="form-label">Confidence Level (%)</label>
+                                <input type="number" id="confidence-level" class="form-control" value="95" min="1" max="99" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="time-horizon" class="form-label">Time Horizon (Days)</label>
+                                <input type="number" id="time-horizon" class="form-control" value="1" min="1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="volatility" class="form-label">Portfolio Volatility (% Annual)</label>
+                                <input type="number" id="volatility" class="form-control" value="15" min="0.1" step="0.1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="var-method" class="form-label">VaR Method</label>
+                                <select id="var-method" class="form-control form-select">
+                                    <option value="parametric">Parametric</option>
+                                    <option value="historical">Historical Simulation</option>
+                                    <option value="monte-carlo">Monte Carlo Simulation</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="cta-button">Calculate VaR</button>
+                        </form>
+                        
+                        <div id="var-result-container" style="display: none;">
+                            <h4>Value at Risk (VaR) Result</h4>
+                            <p>Based on your inputs, the 1-day Value at Risk (VaR) at 95% confidence level is:</p>
+                            <div id="var-result" class="dashboard-value">$0.00</div>
+                            
+                            <p>Risk Level:</p>
+                            <div class="risk-meter">
+                                <div class="risk-level" style="width: 0%;"></div>
+                            </div>
+                            <p id="risk-interpretation" class="success-text">Low Risk: Your potential loss is less than 1% of portfolio value.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section animate-on-scroll">
+                    <h3>Stress Testing and Scenario Analysis</h3>
+                    <p class="content-text">
+                        Stress testing is a risk management technique that evaluates the potential impact of specific scenarios on a financial institution's financial condition. Unlike VaR, which is based on normal market conditions, stress testing focuses on extreme but plausible scenarios.
+                    </p>
+                    
+                    <p class="content-text">
+                        Types of stress tests include:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>
+                            <strong>Historical Scenarios</strong>: Based on significant market events from the past (e.g., 2008 financial crisis, 1987 stock market crash).
+                        </li>
+                        <li>
+                            <strong>Hypothetical Scenarios</strong>: Based on plausible future events that haven't occurred yet.
+                        </li>
+                        <li>
+                            <strong>Sensitivity Analysis</strong>: Examines how changes in specific risk factors affect portfolio value.
+                        </li>
+                        <li>
+                            <strong>Reverse Stress Testing</strong>: Identifies scenarios that could cause a specific adverse outcome.
+                        </li>
+                    </ul>
+                    
+                    <div class="interactive-element">
+                        <h4>Stress Test Simulator</h4>
+                        <form id="stress-test-form">
+                            <div class="form-group">
+                                <label for="stress-portfolio-value" class="form-label">Portfolio Value ($)</label>
+                                <input type="number" id="stress-portfolio-value" class="form-control" value="1000000" min="1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="equity-exposure" class="form-label">Equity Exposure (%)</label>
+                                <input type="number" id="equity-exposure" class="form-control" value="60" min="0" max="100" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="bond-exposure" class="form-label">Bond Exposure (%)</label>
+                                <input type="number" id="bond-exposure" class="form-control" value="30" min="0" max="100" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="fx-exposure" class="form-label">Foreign Exchange Exposure (%)</label>
+                                <input type="number" id="fx-exposure" class="form-control" value="10" min="0" max="100" required>
+                            </div>
+                            
+                            <button type="submit" class="cta-button">Run Stress Test</button>
+                        </form>
+                        
+                        <div id="stress-test-result-container" style="display: none;">
+                            <h4>Stress Test Results</h4>
+                            <div class="chart-container">
+                                <canvas id="stress-test-chart"></canvas>
+                            </div>
+                            
+                            <table class="content-table">
+                                <thead>
+                                    <tr>
+                                        <th>Scenario</th>
+                                        <th>Portfolio Value</th>
+                                        <th>Impact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Base Case</td>
+                                        <td id="base-case-value">$1,000,000</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mild Stress</td>
+                                        <td id="mild-stress-value">$950,000</td>
+                                        <td id="mild-stress-impact">-$50,000 (5%)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Moderate Stress</td>
+                                        <td id="moderate-stress-value">$850,000</td>
+                                        <td id="moderate-stress-impact">-$150,000 (15%)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Severe Stress</td>
+                                        <td id="severe-stress-value">$700,000</td>
+                                        <td id="severe-stress-impact">-$300,000 (30%)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Knowledge Check -->
+                <div class="knowledge-test animate-on-scroll">
+                    <h3>Knowledge Check</h3>
+                    <div class="question">
+                        <div class="question-text">Which VaR methodology uses thousands of random market scenarios to estimate potential losses?</div>
+                        <div class="options">
+                            <div class="option" data-correct="false">Parametric Method</div>
+                            <div class="option" data-correct="false">Historical Simulation Method</div>
+                            <div class="option" data-correct="true">Monte Carlo Simulation Method</div>
+                            <div class="option" data-correct="false">Expected Shortfall Method</div>
+                        </div>
+                        <div class="feedback"></div>
+                    </div>
+                    
+                    <button id="check-answer-intermediate" class="cta-button">Check Answer</button>
+                </div>
+            </div>
+            
+            <!-- Advanced Content -->
+            <div class="content-advanced">
+                <div class="content-section animate-on-scroll">
+                    <h3>Regulatory Capital Requirements</h3>
+                    <p class="content-text">
+                        Banks are required to hold capital against market risk in their trading books. The Basel Committee on Banking Supervision has established frameworks for calculating market risk capital requirements.
+                    </p>
+                    
+                    <p class="content-text">
+                        The Fundamental Review of the Trading Book (FRTB) is the latest major revision to the market risk framework, introducing:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>
+                            <strong>Revised Standardized Approach</strong>: A more risk-sensitive approach that better captures tail risks and market illiquidity.
+                        </li>
+                        <li>
+                            <strong>Revised Internal Models Approach</strong>: Replaces VaR with Expected Shortfall (ES) and includes liquidity horizons.
+                        </li>
+                        <li>
+                            <strong>Trading Book / Banking Book Boundary</strong>: Stricter rules for the allocation of instruments to the trading book or banking book.
+                        </li>
+                        <li>
+                            <strong>P&L Attribution Test</strong>: Ensures that internal models accurately capture all material risks.
+                        </li>
+                    </ul>
+                    
+                    <div class="interactive-element">
+                        <h4>Regulatory Capital Calculator</h4>
+                        <form id="capital-calculator-form">
+                            <div class="form-group">
+                                <label for="market-risk-assets" class="form-label">Market Risk-Weighted Assets ($)</label>
+                                <input type="number" id="market-risk-assets" class="form-control" value="10000000" min="1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="approach-type" class="form-label">Approach Type</label>
+                                <select id="approach-type" class="form-control form-select">
+                                    <option value="standardized">Standardized Approach</option>
+                                    <option value="internal-model">Internal Model Approach</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="cta-button">Calculate Capital Requirement</button>
+                        </form>
+                        
+                        <div id="capital-result-container" style="display: none;">
+                            <h4>Capital Requirement Result</h4>
+                            <p>Based on your inputs, the market risk capital requirement is:</p>
+                            <div id="capital-result" class="dashboard-value">$0.00</div>
+                            
+                            <p>Capital Ratio:</p>
+                            <div id="capital-ratio" class="dashboard-value">0.00%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section animate-on-scroll">
+                    <h3>Advanced Market Risk Management Techniques</h3>
+                    <p class="content-text">
+                        Advanced market risk management goes beyond basic metrics and incorporates sophisticated techniques:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>
+                            <strong>Extreme Value Theory (EVT)</strong>: A branch of statistics that deals with extreme deviations from the median of probability distributions.
+                        </li>
+                        <li>
+                            <strong>Copula Methods</strong>: Mathematical functions that describe the dependence between random variables, useful for modeling complex dependencies in market risk factors.
+                        </li>
+                        <li>
+                            <strong>Bayesian Methods</strong>: Incorporate prior knowledge and update beliefs as new data becomes available.
+                        </li>
+                        <li>
+                            <strong>Machine Learning Approaches</strong>: Use algorithms to identify patterns and make predictions about market movements.
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="content-section animate-on-scroll">
+                    <h3>Case Study: JPMorgan Chase "London Whale" Trading Loss</h3>
+                    <p class="content-text">
+                        In 2012, JPMorgan Chase suffered trading losses of over $6 billion due to excessive risk-taking by a trader known as the "London Whale." This case study illustrates several market risk management failures:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>
+                            <strong>VaR Model Weaknesses</strong>: The bank changed its VaR model, which underestimated the risk of the trading positions.
+                        </li>
+                        <li>
+                            <strong>Risk Limit Breaches</strong>: Multiple risk limits were breached but not properly addressed.
+                        </li>
+                        <li>
+                            <strong>Inadequate Oversight</strong>: Senior management failed to properly oversee the trading activities.
+                        </li>
+                        <li>
+                            <strong>Concentration Risk</strong>: The portfolio was highly concentrated in specific credit derivatives.
+                        </li>
+                    </ul>
+                    
+                    <p class="content-text">
+                        This case demonstrates the importance of robust market risk management frameworks, proper model validation, and effective governance.
+                    </p>
+                </div>
+                
+                <!-- Knowledge Check -->
+                <div class="knowledge-test animate-on-scroll">
+                    <h3>Knowledge Check</h3>
+                    <div class="question">
+                        <div class="question-text">Under the Fundamental Review of the Trading Book (FRTB), which risk measure replaces Value at Risk (VaR) in the internal models approach?</div>
+                        <div class="options">
+                            <div class="option" data-correct="false">Stress VaR</div>
+                            <div class="option" data-correct="true">Expected Shortfall (ES)</div>
+                            <div class="option" data-correct="false">Maximum Loss</div>
+                            <div class="option" data-correct="false">Conditional Drawdown at Risk (CDaR)</div>
+                        </div>
+                        <div class="feedback"></div>
+                    </div>
+                    
+                    <button id="check-answer-advanced" class="cta-button">Check Answer</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module Navigation -->
+    <section class="course-content">
+        <div class="container">
+            <div class="course-navigation">
+                <a href="../../index.html" class="nav-button prev">Back to Home</a>
+                <a href="../credit-risk/index.html" class="nav-button next">Next: Credit Risk</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Risk Academy</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../../index.html">Home</a></li>
+                        <li class="footer-link"><a href="../../about.html">About</a></li>
+                        <li class="footer-link"><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Course Modules</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../market-risk/index.html">Market Risk</a></li>
+                        <li class="footer-link"><a href="../credit-risk/index.html">Credit Risk</a></li>
+                        <li class="footer-link"><a href="../counterparty-risk/index.html">Counterparty Risk</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../../resources/glossary.html">Risk Glossary</a></li>
+                        <li class="footer-link"><a href="../../resources/calculators.html">Risk Calculators</a></li>
+                        <li class="footer-link"><a href="../../resources/references.html">References</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../../legal/terms.html">Terms of Use</a></li>
+                        <li class="footer-link"><a href="../../legal/privacy.html">Privacy Policy</a></li>
+                        <li class="footer-link"><a href="../../legal/cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 Risk Academy. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/market-risk.js"></script>
+</body>
+</html>

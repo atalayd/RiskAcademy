@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Risk Management Course | Risk Academy</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Risk Academy</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="modules/market-risk/index.html" class="nav-link">Market Risk</a></li>
+                <li class="nav-item"><a href="modules/credit-risk/index.html" class="nav-link">Credit Risk</a></li>
+                <li class="nav-item"><a href="modules/counterparty-risk/index.html" class="nav-link">Counterparty Risk</a></li>
+                <li class="nav-item"><a href="#" id="dark-mode-toggle" class="nav-link">Toggle Dark Mode</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="animate-on-scroll">Financial Risk Management Course</h1>
+            <p class="animate-on-scroll">A comprehensive course on Market Risk, Credit Risk, and Counterparty Credit Risk designed for banking professionals.</p>
+            
+            <!-- Skill Level Selector -->
+            <div class="skill-selector animate-on-scroll">
+                <div class="skill-option beginner active" data-skill="beginner">Beginner</div>
+                <div class="skill-option intermediate" data-skill="intermediate">Intermediate</div>
+                <div class="skill-option advanced" data-skill="advanced">Advanced</div>
+            </div>
+            
+            <a href="#modules" class="cta-button animate-on-scroll">Explore Modules</a>
+        </div>
+    </section>
+
+    <!-- Course Overview -->
+    <section class="course-content">
+        <div class="container">
+            <h2 class="content-title animate-on-scroll">Course Overview</h2>
+            <p class="content-text animate-on-scroll">This comprehensive financial risk management course is designed for banking professionals in technical and analytical roles, including Senior Tech Business Analysts, Business System Analysts, Project Managers, and Data Analysts. Drawing on over 12 years of industry experience, this course provides practical insights and up-to-date guidance on managing various types of financial risks.</p>
+            
+            <div class="dashboard animate-on-scroll">
+                <div class="dashboard-card">
+                    <div class="dashboard-title">Interactive Learning</div>
+                    <p>Engage with real-time market data and interactive visualizations to understand complex risk concepts.</p>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="dashboard-title">Practical Applications</div>
+                    <p>Apply theoretical knowledge to real-world scenarios through case studies and practical examples.</p>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="dashboard-title">Industry Expertise</div>
+                    <p>Benefit from insights based on extensive experience in banking and financial risk management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Modules -->
+    <section class="course-content" id="modules">
+        <div class="container">
+            <h2 class="content-title animate-on-scroll">Course Modules</h2>
+            
+            <div class="module-cards animate-on-scroll">
+                <div class="module-card">
+                    <div class="module-card-image" style="background-image: url('assets/images/market-risk.jpg');"></div>
+                    <div class="module-card-content">
+                        <div class="module-card-title">Market Risk</div>
+                        <div class="module-card-description">Learn about Value at Risk (VaR), stress testing, and regulatory requirements for market risk management.</div>
+                        <div class="module-card-footer">
+                            <span class="skill-level beginner">Beginner</span>
+                            <a href="modules/market-risk/index.html" class="module-card-link">Start Learning →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-card-image" style="background-image: url('assets/images/credit-risk.jpg');"></div>
+                    <div class="module-card-content">
+                        <div class="module-card-title">Credit Risk</div>
+                        <div class="module-card-description">Explore credit scoring, expected loss calculation, and portfolio management strategies.</div>
+                        <div class="module-card-footer">
+                            <span class="skill-level intermediate">Intermediate</span>
+                            <a href="modules/credit-risk/index.html" class="module-card-link">Start Learning →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-card-image" style="background-image: url('assets/images/counterparty-risk.jpg');"></div>
+                    <div class="module-card-content">
+                        <div class="module-card-title">Counterparty Credit Risk</div>
+                        <div class="module-card-description">Understand exposure modeling, CVA/DVA, wrong-way risk, and regulatory frameworks.</div>
+                        <div class="module-card-footer">
+                            <span class="skill-level advanced">Advanced</span>
+                            <a href="modules/counterparty-risk/index.html" class="module-card-link">Start Learning →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Features -->
+    <section class="course-content">
+        <div class="container">
+            <h2 class="content-title animate-on-scroll">Course Features</h2>
+            
+            <div class="tabs animate-on-scroll">
+                <div class="tab active" data-target="interactive-visualizations">Interactive Visualizations</div>
+                <div class="tab" data-target="real-time-data">Real-Time Data</div>
+                <div class="tab" data-target="knowledge-tests">Knowledge Tests</div>
+                <div class="tab" data-target="skill-levels">Skill Levels</div>
+            </div>
+            
+            <div id="interactive-visualizations" class="tab-content active">
+                <div class="content-section animate-on-scroll">
+                    <h3>Interactive Visualizations</h3>
+                    <p class="content-text">Engage with dynamic visualizations that illustrate complex risk concepts and allow you to explore how different parameters affect risk metrics.</p>
+                    
+                    <div class="interactive-element">
+                        <h4>Sample Visualization: Risk-Return Trade-off</h4>
+                        <div class="chart-container">
+                            <canvas id="risk-return-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="real-time-data" class="tab-content">
+                <div class="content-section animate-on-scroll">
+                    <h3>Real-Time Market Data</h3>
+                    <p class="content-text">Access up-to-date market data to understand current risk conditions and practice risk management techniques with real-world information.</p>
+                    
+                    <div class="interactive-element">
+                        <h4>Sample Market Data: Stock Price Volatility</h4>
+                        <div class="api-controls">
+                            <div class="form-group">
+                                <label class="form-label">Select Stock</label>
+                                <select id="stock-symbol" class="form-control form-select">
+                                    <option value="AAPL">Apple (AAPL)</option>
+                                    <option value="MSFT">Microsoft (MSFT)</option>
+                                    <option value="GOOGL">Alphabet (GOOGL)</option>
+                                    <option value="AMZN">Amazon (AMZN)</option>
+                                    <option value="NVDA">NVIDIA (NVDA)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Time Interval</label>
+                                <select id="time-interval" class="form-control form-select">
+                                    <option value="5min">5 Minutes</option>
+                                    <option value="15min">15 Minutes</option>
+                                    <option value="30min">30 Minutes</option>
+                                    <option value="60min">60 Minutes</option>
+                                </select>
+                            </div>
+                            
+                            <button id="fetch-data" class="cta-button">Fetch Data</button>
+                        </div>
+                        
+                        <div id="market-data-container" class="chart-container">
+                            <div class="api-data-loading">
+                                <div class="loading-spinner"></div>
+                                <p>Select a stock and click "Fetch Data" to view market information</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="knowledge-tests" class="tab-content">
+                <div class="content-section animate-on-scroll">
+                    <h3>Knowledge Tests</h3>
+                    <p class="content-text">Test your understanding with interactive quizzes and assessments that provide immediate feedback and reinforce key concepts.</p>
+                    
+                    <div class="knowledge-test">
+                        <h4>Sample Question</h4>
+                        <div class="question">
+                            <div class="question-text">Which of the following is NOT a component of Expected Loss calculation?</div>
+                            <div class="options">
+                                <div class="option" data-correct="false">Probability of Default (PD)</div>
+                                <div class="option" data-correct="false">Loss Given Default (LGD)</div>
+                                <div class="option" data-correct="false">Exposure at Default (EAD)</div>
+                                <div class="option" data-correct="true">Value at Risk (VaR)</div>
+                            </div>
+                            <div class="feedback"></div>
+                        </div>
+                        
+                        <button id="check-answer" class="cta-button">Check Answer</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="skill-levels" class="tab-content">
+                <div class="content-section animate-on-scroll">
+                    <h3>Skill Levels</h3>
+                    <p class="content-text">Content is tailored to different knowledge levels, allowing you to start at the appropriate point and progress at your own pace.</p>
+                    
+                    <div class="dashboard">
+                        <div class="dashboard-card">
+                            <div class="dashboard-title">Beginner</div>
+                            <p>Introduces fundamental concepts and terminology for those new to financial risk management.</p>
+                            <ul class="content-list">
+                                <li>Basic risk concepts and definitions</li>
+                                <li>Introduction to regulatory frameworks</li>
+                                <li>Simple risk measurement techniques</li>
+                                <li>Foundational mathematical concepts</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <div class="dashboard-title">Intermediate</div>
+                            <p>Builds on foundational knowledge with more detailed methodologies and practical applications.</p>
+                            <ul class="content-list">
+                                <li>Detailed risk modeling approaches</li>
+                                <li>Practical implementation challenges</li>
+                                <li>Regulatory compliance strategies</li>
+                                <li>Case studies and real-world examples</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <div class="dashboard-title">Advanced</div>
+                            <p>Covers complex topics and cutting-edge approaches for experienced professionals.</p>
+                            <ul class="content-list">
+                                <li>Advanced modeling techniques</li>
+                                <li>Integration of multiple risk types</li>
+                                <li>Strategic risk management</li>
+                                <li>Emerging trends and future directions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About the Course -->
+    <section class="course-content">
+        <div class="container">
+            <h2 class="content-title animate-on-scroll">About the Course</h2>
+            
+            <div class="content-section animate-on-scroll">
+                <p class="content-text">This course is designed by industry professionals with over 12 years of experience in banking and financial risk management. It combines theoretical knowledge with practical insights to provide a comprehensive understanding of financial risk management.</p>
+                
+                <h3>Target Audience</h3>
+                <p class="content-text">This course is specifically designed for professionals in banking roles such as:</p>
+                <ul class="content-list">
+                    <li>Senior Tech Business Analysts</li>
+                    <li>Business System Analysts</li>
+                    <li>Project Managers</li>
+                    <li>Data Analysts</li>
+                </ul>
+                
+                <h3>Learning Objectives</h3>
+                <p class="content-text">By the end of this course, you will be able to:</p>
+                <ul class="content-list">
+                    <li>Understand the fundamental concepts and methodologies of market risk, credit risk, and counterparty credit risk</li>
+                    <li>Apply risk measurement techniques to real-world scenarios</li>
+                    <li>Interpret risk metrics and use them to inform business decisions</li>
+                    <li>Navigate regulatory requirements and compliance challenges</li>
+                    <li>Implement risk management strategies in banking systems and processes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started -->
+    <section class="course-content">
+        <div class="container">
+            <h2 class="content-title animate-on-scroll">Get Started Today</h2>
+            
+            <div class="content-section animate-on-scroll">
+                <p class="content-text">Ready to enhance your financial risk management skills? Choose a module to begin your learning journey.</p>
+                
+                <div class="dashboard">
+                    <a href="modules/market-risk/index.html" class="dashboard-card">
+                        <div class="dashboard-title">Market Risk</div>
+                        <p>Start with the fundamentals of market risk management.</p>
+                    </a>
+                    
+                    <a href="modules/credit-risk/index.html" class="dashboard-card">
+                        <div class="dashboard-title">Credit Risk</div>
+                        <p>Explore credit risk assessment and management techniques.</p>
+                    </a>
+                    
+                    <a href="modules/counterparty-risk/index.html" class="dashboard-card">
+                        <div class="dashboard-title">Counterparty Credit Risk</div>
+                        <p>Dive into advanced counterparty risk concepts.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Risk Academy</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="index.html">Home</a></li>
+                        <li class="footer-link"><a href="about.html">About</a></li>
+                        <li class="footer-link"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Course Modules</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="modules/market-risk/index.html">Market Risk</a></li>
+                        <li class="footer-link"><a href="modules/credit-risk/index.html">Credit Risk</a></li>
+                        <li class="footer-link"><a href="modules/counterparty-risk/index.html">Counterparty Risk</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="resources/glossary.html">Risk Glossary</a></li>
+                        <li class="footer-link"><a href="resources/calculators.html">Risk Calculators</a></li>
+                        <li class="footer-link"><a href="resources/references.html">References</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="legal/terms.html">Terms of Use</a></li>
+                        <li class="footer-link"><a href="legal/privacy.html">Privacy Policy</a></li>
+                        <li class="footer-link"><a href="legal/cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 Risk Academy. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

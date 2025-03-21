@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Risk Module | Financial Risk Management Course</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="../../index.html" class="logo">Risk Academy</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../market-risk/index.html" class="nav-link">Market Risk</a></li>
+                <li class="nav-item"><a href="../credit-risk/index.html" class="nav-link active">Credit Risk</a></li>
+                <li class="nav-item"><a href="../counterparty-risk/index.html" class="nav-link">Counterparty Risk</a></li>
+                <li class="nav-item"><a href="#" id="dark-mode-toggle" class="nav-link">Toggle Dark Mode</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Module Header -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="animate-on-scroll">Credit Risk Module</h1>
+            <p class="animate-on-scroll">Explore credit scoring, expected loss calculation, and portfolio management strategies.</p>
+            
+            <!-- Skill Level Selector -->
+            <div class="skill-selector animate-on-scroll">
+                <div class="skill-option beginner active" data-skill="beginner">Beginner</div>
+                <div class="skill-option intermediate" data-skill="intermediate">Intermediate</div>
+                <div class="skill-option advanced" data-skill="advanced">Advanced</div>
+            </div>
+            
+            <!-- Breadcrumb Navigation -->
+            <div class="breadcrumb animate-on-scroll">
+                <a href="../../index.html">Home</a> &gt; Credit Risk
+            </div>
+        </div>
+    </section>
+
+    <!-- Module Content -->
+    <section class="course-content">
+        <div class="container">
+            <h2 class="content-title animate-on-scroll">Introduction to Credit Risk</h2>
+            
+            <!-- Beginner Content -->
+            <div class="content-beginner">
+                <div class="content-section animate-on-scroll">
+                    <h3>What is Credit Risk?</h3>
+                    <p class="content-text">
+                        Credit risk is the risk of loss resulting from a borrower's failure to repay a loan or meet contractual obligations. It refers to the possibility that a borrower will default on their debt by failing to make required payments, which may be in the form of interest or principal repayments.
+                    </p>
+                    
+                    <p class="content-text">
+                        Credit risk is a critical concern for:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li><strong>Banks and Financial Institutions</strong>: When lending to individuals and businesses</li>
+                        <li><strong>Investors</strong>: When purchasing bonds or debt securities</li>
+                        <li><strong>Businesses</strong>: When extending credit to customers</li>
+                        <li><strong>Governments</strong>: When issuing sovereign debt</li>
+                    </ul>
+                    
+                    <div class="interactive-element">
+                        <h4>Credit Risk Components</h4>
+                        <div class="chart-container">
+                            <canvas id="credit-risk-components-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section animate-on-scroll">
+                    <h3>Key Credit Risk Concepts</h3>
+                    <p class="content-text">
+                        Understanding credit risk requires familiarity with several key concepts:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>
+                            <strong>Default</strong>: The failure of a borrower to make required payments as per the loan agreement.
+                        </li>
+                        <li>
+                            <strong>Probability of Default (PD)</strong>: The likelihood that a borrower will default on their obligations.
+                        </li>
+                        <li>
+                            <strong>Loss Given Default (LGD)</strong>: The amount of money a lender loses when a borrower defaults, usually expressed as a percentage of the total exposure.
+                        </li>
+                        <li>
+                            <strong>Exposure at Default (EAD)</strong>: The total value that a bank is exposed to when a borrower defaults.
+                        </li>
+                        <li>
+                            <strong>Expected Loss (EL)</strong>: The average credit loss that a lender can expect from a portfolio of loans, calculated as PD × LGD × EAD.
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="content-section animate-on-scroll">
+                    <h3>Credit Risk Regulatory Framework</h3>
+                    <p class="content-text">
+                        Credit risk is regulated under various frameworks, including:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>
+                            <strong>Basel Framework</strong>: The Basel Committee on Banking Supervision has established standards for credit risk capital requirements.
+                        </li>
+                        <li>
+                            <strong>IFRS 9 / CECL</strong>: Accounting standards that require financial institutions to recognize expected credit losses.
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Knowledge Check -->
+                <div class="knowledge-test animate-on-scroll">
+                    <h3>Knowledge Check</h3>
+                    <div class="question">
+                        <div class="question-text">Which of the following is the correct formula for Expected Loss (EL)?</div>
+                        <div class="options">
+                            <div class="option" data-correct="true">PD × LGD × EAD</div>
+                            <div class="option" data-correct="false">PD + LGD + EAD</div>
+                            <div class="option" data-correct="false">PD × LGD / EAD</div>
+                            <div class="option" data-correct="false">PD / (LGD × EAD)</div>
+                        </div>
+                        <div class="feedback"></div>
+                    </div>
+                    
+                    <button id="check-answer-beginner" class="cta-button">Check Answer</button>
+                </div>
+            </div>
+            
+            <!-- Intermediate Content -->
+            <div class="content-intermediate">
+                <div class="content-section animate-on-scroll">
+                    <h3>Credit Scoring and Rating Methodologies</h3>
+                    <p class="content-text">
+                        Credit scoring and rating methodologies are systematic approaches to assess the creditworthiness of borrowers. These methodologies help lenders make informed lending decisions and price loans appropriately.
+                    </p>
+                    
+                    <h4>Consumer Credit Scoring</h4>
+                    <p class="content-text">
+                        Consumer credit scoring typically uses statistical models to predict the likelihood of default based on factors such as:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li><strong>Payment History</strong>: Record of on-time payments</li>
+                        <li><strong>Credit Utilization</strong>: Amount of available credit being used</li>
+                        <li><strong>Length of Credit History</strong>: How long accounts have been open</li>
+                        <li><strong>Types of Credit</strong>: Mix of credit accounts (credit cards, loans, etc.)</li>
+                        <li><strong>New Credit</strong>: Recently opened accounts and credit inquiries</li>
+                    </ul>
+                    
+                    <h4>Corporate Credit Rating</h4>
+                    <p class="content-text">
+                        Corporate credit ratings assess the creditworthiness of businesses and are typically provided by rating agencies like S&P, Moody's, and Fitch. These ratings consider factors such as:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li><strong>Financial Performance</strong>: Profitability, cash flow, and leverage</li>
+                        <li><strong>Industry Outlook</strong>: Growth prospects and competitive dynamics</li>
+                        <li><strong>Management Quality</strong>: Track record and strategic direction</li>
+                        <li><strong>Business Position</strong>: Market share and competitive advantages</li>
+                        <li><strong>Country Risk</strong>: Political and economic stability</li>
+                    </ul>
+                    
+                    <div class="interactive-element">
+                        <h4>Credit Score Simulator</h4>
+                        <form id="credit-score-simulator-form">
+                            <div class="form-group">
+                                <label for="payment-history" class="form-label">Payment History (0-100)</label>
+                                <input type="range" id="payment-history" class="form-control" min="0" max="100" value="80">
+                                <span id="payment-history-value">80</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="credit-utilization" class="form-label">Credit Utilization (0-100)</label>
+                                <input type="range" id="credit-utilization" class="form-control" min="0" max="100" value="30">
+                                <span id="credit-utilization-value">30</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="credit-history" class="form-label">Length of Credit History (Years)</label>
+                                <input type="range" id="credit-history" class="form-control" min="0" max="30" value="5">
+                                <span id="credit-history-value">5</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="credit-mix" class="form-label">Credit Mix (0-100)</label>
+                                <input type="range" id="credit-mix" class="form-control" min="0" max="100" value="70">
+                                <span id="credit-mix-value">70</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="new-credit" class="form-label">New Credit (0-100)</label>
+                                <input type="range" id="new-credit" class="form-control" min="0" max="100" value="90">
+                                <span id="new-credit-value">90</span>
+                            </div>
+                            
+                            <button type="submit" class="cta-button">Calculate Credit Score</button>
+                        </form>
+                        
+                        <div id="credit-score-result-container" style="display: none;">
+                            <h4>Credit Score Result</h4>
+                            <div id="credit-score-result" class="dashboard-value">0</div>
+                            
+                            <div class="risk-meter">
+                                <div class="risk-level" style="width: 0%;"></div>
+                            </div>
+                            
+                            <p id="credit-score-interpretation"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section animate-on-scroll">
+                    <h3>Expected Loss Calculation and Provisioning</h3>
+                    <p class="content-text">
+                        Expected Loss (EL) is a key metric in credit risk management, representing the average loss a lender can expect from a portfolio of loans. It is calculated using the formula:
+                    </p>
+                    
+                    <p class="content-text">
+                        <strong>Expected Loss (EL) = Probability of Default (PD) × Loss Given Default (LGD) × Exposure at Default (EAD)</strong>
+                    </p>
+                    
+                    <p class="content-text">
+                        Under accounting standards like IFRS 9 and CECL, financial institutions are required to recognize expected credit losses and make provisions accordingly. These standards use a forward-looking approach that considers:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li><strong>Past Events</strong>: Historical default and loss data</li>
+                        <li><strong>Current Conditions</strong>: Present economic environment</li>
+                        <li><strong>Future Forecasts</strong>: Projected economic scenarios</li>
+                    </ul>
+                    
+                    <div class="interactive-element">
+                        <h4>Expected Loss Calculator</h4>
+                        <form id="expected-loss-calculator-form">
+                            <div class="form-group">
+                                <label for="loan-amount" class="form-label">Loan Amount ($)</label>
+                                <input type="number" id="loan-amount" class="form-control" value="100000" min="1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="probability-default" class="form-label">Probability of Default (%)</label>
+                                <input type="number" id="probability-default" class="form-control" value="2" min="0" max="100" step="0.1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="loss-given-default" class="form-label">Loss Given Default (%)</label>
+                                <input type="number" id="loss-given-default" class="form-control" value="40" min="0" max="100" step="0.1" required>
+                            </div>
+                            
+                            <button type="submit" class="cta-button">Calculate Expected Loss</button>
+                        </form>
+                        
+                        <div id="expected-loss-result-container" style="display: none;">
+                            <h4>Expected Loss Result</h4>
+                            <p>Based on your inputs, the Expected Loss (EL) is:</p>
+                            <div id="expected-loss-result" class="dashboard-value">$0.00</div>
+                            
+                            <div class="chart-container">
+                                <canvas id="expected-loss-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Knowledge Check -->
+                <div class="knowledge-test animate-on-scroll">
+                    <h3>Knowledge Check</h3>
+                    <div class="question">
+                        <div class="question-text">Which accounting standard requires financial institutions to recognize expected credit losses using a forward-looking approach?</div>
+                        <div class="options">
+                            <div class="option" data-correct="false">IAS 39</div>
+                            <div class="option" data-correct="true">IFRS 9</div>
+                            <div class="option" data-correct="false">IFRS 15</div>
+                            <div class="option" data-correct="false">IAS 37</div>
+                        </div>
+                        <div class="feedback"></div>
+                    </div>
+                    
+                    <button id="check-answer-intermediate" class="cta-button">Check Answer</button>
+                </div>
+            </div>
+            
+            <!-- Advanced Content -->
+            <div class="content-advanced">
+                <div class="content-section animate-on-scroll">
+                    <h3>Credit Risk Capital Requirements</h3>
+                    <p class="content-text">
+                        Banks are required to hold capital against credit risk in their portfolios. The Basel Committee on Banking Supervision has established frameworks for calculating credit risk capital requirements.
+                    </p>
+                    
+                    <h4>Standardized Approach</h4>
+                    <p class="content-text">
+                        The Standardized Approach uses external credit ratings to determine risk weights for different types of exposures. Key features include:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li><strong>Risk Weights</strong>: Assigned based on exposure type and external rating</li>
+                        <li><strong>Credit Risk Mitigation</strong>: Recognition of collateral, guarantees, and credit derivatives</li>
+                        <li><strong>Off-Balance Sheet Items</strong>: Conversion factors to determine exposure amount</li>
+                    </ul>
+                    
+                    <h4>Internal Ratings-Based (IRB) Approach</h4>
+                    <p class="content-text">
+                        The IRB Approach allows banks to use their internal models to estimate credit risk parameters. There are two variants:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>
+                            <strong>Foundation IRB (F-IRB)</strong>: Banks estimate PD, but use regulatory values for LGD and EAD
+                        </li>
+                        <li>
+                            <strong>Advanced IRB (A-IRB)</strong>: Banks estimate all risk parameters (PD, LGD, EAD)
+                        </li>
+                    </ul>
+                    
+                    <div class="interactive-element">
+                        <h4>Credit Risk Capital Calculator</h4>
+                        <form id="capital-calculator-form">
+                            <div class="form-group">
+                                <label for="approach-type" class="form-label">Approach Type</label>
+                                <select id="approach-type" class="form-control form-select">
+                                    <option value="standardized">Standardized Approach</option>
+                                    <option value="foundation-irb">Foundation IRB</option>
+                                    <option value="advanced-irb">Advanced IRB</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="exposure-amount" class="form-label">Exposure Amount ($)</label>
+                                <input type="number" id="exposure-amount" class="form-control" value="1000000" min="1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="exposure-type" class="form-label">Exposure Type</label>
+                                <select id="exposure-type" class="form-control form-select">
+                                    <option value="corporate">Corporate</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="sovereign">Sovereign</option>
+                                    <option value="bank">Bank</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="credit-rating" class="form-label">External Credit Rating</label>
+                                <select id="credit-rating" class="form-control form-select">
+                                    <option value="aaa">AAA</option>
+                                    <option value="aa">AA</option>
+                                    <option value="a">A</option>
+                                    <option value="bbb">BBB</option>
+                                    <option value="bb">BB</option>
+                                    <option value="b">B</option>
+                                    <option value="ccc">CCC or lower</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="probability-default-capital" class="form-label">Probability of Default (%) - For IRB</label>
+                                <input type="number" id="probability-default-capital" class="form-control" value="1" min="0" max="100" step="0.01" required>
+                            </div>
+                            
+                            <button type="submit" class="cta-button">Calculate Capital Requirement</button>
+                        </form>
+                        
+                        <div id="capital-result-container" style="display: none;">
+                            <h4>Capital Requirement Result</h4>
+                            <p>Based on your inputs, the credit risk capital requirement is:</p>
+                            <div id="capital-result" class="dashboard-value">$0.00</div>
+                            
+                            <p>Risk-Weighted Assets (RWA):</p>
+                            <div id="rwa-result" class="dashboard-value">$0.00</div>
+                            
+                            <p>Capital Ratio:</p>
+                            <div id="capital-ratio" class="dashboard-value">0.00%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section animate-on-scroll">
+                    <h3>Credit Portfolio Management</h3>
+                    <p class="content-text">
+                        Credit portfolio management involves optimizing the risk-return profile of a credit portfolio. Key aspects include:
+                    </p>
+                    
+                    <ul class="content-list">
+                        <li>
+                            <strong>Portfolio Diversification</strong>: Spreading exposure across different borrowers, industries, and geographies to reduce concentration risk.
+                        </li>
+                        <li>
+                            <strong>Risk-Based Pricing</strong>: Setting loan terms and interest rates based on the borrower's risk profile.
+                        </li>
+                        <li>
+                            <strong>Credit Derivatives</strong>: Using instruments like credit default swaps (CDS) to hedge credit risk.
+                        </li>
+                        <li>
+                            <strong>Securitization</strong>: Pooling loans and issuing securities backed by the cash flows from these loans.
+                        </li>
+                        <li>
+                            <strong>Economic Capital Allocation</strong>: Assigning capital to different business units based on their risk contribution.
+                        </li>
+                    </ul>
+                    
+                    <div class="interactive-element">
+                        <h4>Portfolio Optimization Simulator</h4>
+                        <form id="portfolio-optimization-form">
+                            <div class="form-group">
+                                <label for="portfolio-size" class="form-label">Portfolio Size ($)</label>
+                                <input type="number" id="portfolio-size" class="form-control" value="10000000" min="1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="industry-concentration" class="form-label">Industry Concentration (% in largest industry)</label>
+                                <input type="range" id="industry-concentration" class="form-control" min="10" max="90" value="40">
+                                <span id="industry-concentration-value">40%</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="geographic-concentration" class="form-label">Geographic Concentration (% in largest region)</label>
+                                <input type="range" id="geographic-concentration" class="form-control" min="10" max="90" value="35">
+                                <span id="geographic-concentration-value">35%</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="rating-distribution" class="form-label">Rating Distribution (% investment grade)</label>
+                                <input type="range" id="rating-distribution" class="form-control" min="0" max="100" value="60">
+                                <span id="rating-distribution-value">60%</span>
+                            </div>
+                            
+                            <button type="submit" class="cta-button">Optimize Portfolio</button>
+                        </form>
+                        
+                        <div id="portfolio-optimization-result-container" style="display: none;">
+                            <h4>Portfolio Optimization Results</h4>
+                            <div class="chart-container">
+                                <canvas id="portfolio-optimization-chart"></canvas>
+                            </div>
+                            
+                            <table class="content-table">
+                                <thead>
+                                    <tr>
+                                        <th>Metric</th>
+                                        <th>Current Portfolio</th>
+                                        <th>Optimized Portfolio</th>
+                                        <th>Change</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Expected Return</td>
+                                        <td id="current-return">0.00%</td>
+                                        <td id="optimized-return">0.00%</td>
+                                        <td id="return-change">0.00%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Expected Loss</td>
+                                        <td id="current-loss">$0</td>
+                                        <td id="optimized-loss">$0</td>
+                                        <td id="loss-change">$0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Risk-Adjusted Return</td>
+                                        <td id="current-rar">0.00%</td>
+                                        <td id="optimized-rar">0.00%</td>
+                                        <td id="rar-change">0.00%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Economic Capital</td>
+                                        <td id="current-capital">$0</td>
+                                        <td id="optimized-capital">$0</td>
+                                        <td id="capital-change">$0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h4>Optimization Recommendations</h4>
+                            <ul id="optimization-recommendations" class="content-list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Knowledge Check -->
+                <div class="knowledge-test animate-on-scroll">
+                    <h3>Knowledge Check</h3>
+                    <div class="question">
+                        <div class="question-text">Which of the following is NOT a valid approach for calculating credit risk capital requirements under the Basel framework?</div>
+                        <div class="options">
+                            <div class="option" data-correct="false">Standardized Approach</div>
+                            <div class="option" data-correct="false">Foundation IRB Approach</div>
+                            <div class="option" data-correct="false">Advanced IRB Approach</div>
+                            <div class="option" data-correct="true">Expected Shortfall Approach</div>
+                        </div>
+                        <div class="feedback"></div>
+                    </div>
+                    
+                    <button id="check-answer-advanced" class="cta-button">Check Answer</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module Navigation -->
+    <section class="course-content">
+        <div class="container">
+            <div class="course-navigation">
+                <a href="../market-risk/index.html" class="nav-button prev">Previous: Market Risk</a>
+                <a href="../counterparty-risk/index.html" class="nav-button next">Next: Counterparty Risk</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Risk Academy</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../../index.html">Home</a></li>
+                        <li class="footer-link"><a href="../../about.html">About</a></li>
+                        <li class="footer-link"><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Course Modules</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../market-risk/index.html">Market Risk</a></li>
+                        <li class="footer-link"><a href="../credit-risk/index.html">Credit Risk</a></li>
+                        <li class="footer-link"><a href="../counterparty-risk/index.html">Counterparty Risk</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../../resources/glossary.html">Risk Glossary</a></li>
+                        <li class="footer-link"><a href="../../resources/calculators.html">Risk Calculators</a></li>
+                        <li class="footer-link"><a href="../../resources/references.html">References</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="../../legal/terms.html">Terms of Use</a></li>
+                        <li class="footer-link"><a href="../../legal/privacy.html">Privacy Policy</a></li>
+                        <li class="footer-link"><a href="../../legal/cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 Risk Academy. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/credit-risk.js"></script>
+</body>
+</html>
