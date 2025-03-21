@@ -1,10 +1,11 @@
-/\*\*
+# 📊 README.md - Financial Risk Management Course - Risk Academy
 
-- README.md - Financial Risk Management Course - Risk Academy
--
+## 📌 About This Project
+
 - A comprehensive online course on Market Risk, Credit Risk, and Counterparty Credit Risk
+
 - designed for banking professionals with interactive visualizations and real-time market data.
-  \*/
+- there is still so much to add - so little time
 
 # Financial Risk Management Course
 
